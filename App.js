@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import WeightInputGroup from './components/weight_input_group';
+import PlatesCounter from './components/plates_counter';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Plate Counter</Text>
-      <WeightInputGroup />
+      <PlatesCounter />
       <Text>Opefdsafdsan up App.js to start working on your app!</Text>
     </View>
   );
