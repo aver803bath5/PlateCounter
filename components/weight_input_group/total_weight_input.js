@@ -1,18 +1,22 @@
-import React from 'react';
-import { View, TextInput } from 'react-native';
-import CommonStlyes from '../../assets/common/style/styles';
+import React, { Component } from 'react';
+import FloatingLabelInput from './floating_label_input';
 
-function totalWeightInput() {
-  return (
-    <View>
-      <TextInput
-        placeholder="Please Enter Total Weight"
-        keyboardType="number-pad"
-        maxLength={4}
-        style={CommonStlyes.input}
+class TotalWeightInput extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { onTotalWeightChange, totalWeight, label } = this.props;
+
+    return (
+      <FloatingLabelInput 
+        label={label}
+        onChangeText = {onTotalWeightChange}
+        value        = {totalWeight}
       />
-    </View>
-  );
+    );
+  }
 }
 
-export default totalWeightInput;
+export default TotalWeightInput;
