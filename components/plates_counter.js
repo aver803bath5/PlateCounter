@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import WeightInputGroup from './weight_input_group'; 
+import WeightInputGroup from './weight_input_group';
 
 class PlatesCounter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       totalWeight: '',
-      barWeight: 0,
+      barWeight: '',
       platesWeight: 0,
       weightTypes: [],
     };
@@ -17,13 +17,13 @@ class PlatesCounter extends Component {
   }
 
   onTotalWeightChange(totalWeight) {
-    this.setState(state => ({
+    this.setState((state) => ({
       totalWeight,
     }));
   }
 
   onBarWeightChange(barWeight) {
-    this.setState(state => ({
+    this.setState((state) => ({
       barWeight,
     }));
   }
@@ -36,11 +36,11 @@ class PlatesCounter extends Component {
     return (
       <View>
         <WeightInputGroup
-          onTotalWeightChange = {this.onTotalWeightChange}
-          onBarWeightChange   = {this.onBarWeightChange}
-          totalWeight         = {totalWeight}
-          barWeight           = {barWeight}
-        /> 
+          onTotalWeightChange={this.onTotalWeightChange}
+          onBarWeightChange={this.onBarWeightChange}
+          totalWeight={totalWeight}
+          barWeight={barWeight}
+        />
       </View>
     );
   }

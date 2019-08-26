@@ -7,7 +7,6 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.titleText}>Plate Counter</Text>
       <PlatesCounter />
-      <Text>Opefdsafdsan up App.js to start working on your app!</Text>
     </View>
   );
 }
@@ -21,6 +20,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Animated } from 'react-native';
+import {
+  View, Text, TextInput, Animated,
+} from 'react-native';
 import CommonStlyes from '../../assets/common/style/styles';
 
 class FloatingLabelInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFocused: false, 
+      isFocused: false,
     };
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
@@ -18,9 +20,9 @@ class FloatingLabelInput extends Component {
   }
 
   handleFocus() {
-    this.setState(state => ({
+    this.setState((state) => ({
       isFocused: true,
-    })); 
+    }));
   }
 
   componentDidUpdate() {
@@ -31,13 +33,13 @@ class FloatingLabelInput extends Component {
   }
 
   handleBlur() {
-    this.setState(state => ({
+    this.setState((state) => ({
       isFocused: false,
-    })); 
+    }));
   }
 
   render() {
-    const { label, ...props } = this.props;
+    const { label, style, ...props } = this.props;
     const { isFocused } = this.state;
     const labelStyle = {
       position: 'absolute',
@@ -57,7 +59,7 @@ class FloatingLabelInput extends Component {
     };
 
     return (
-      <View style={{ paddingTop: 18 }}>
+      <View style={{ paddingTop: 18, ...style }}>
         <Animated.Text style={labelStyle}>
           {label}
         </Animated.Text>

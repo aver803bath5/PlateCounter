@@ -1,6 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "react-devtools": "react-devtools",
     "start": "expo start",
     "lint": "eslint *.js **/*.js",
     "android": "expo start --android",

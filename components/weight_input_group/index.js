@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import TotalWeightInput from './total_weight_input';
-import BarWeightInput from './bar_weight_input';
+import FloatingLabelInput from './floating_label_input';
 
 class WeightInputGroup extends Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
-    const { onTotalWeightChange, totalWeight } = this.props;
+    const { onTotalWeightChange, onBarWeightChange, barWeight, totalWeight } = this.props;
     return (
-      <View>
-        <TotalWeightInput 
-          label="Total Weight" 
-          onTotalWeightChange={onTotalWeightChange}
-          totalWeight={totalWeight}
+      <View style={{flex: 1}}>
+        {/*- This is total weight input! */} 
+        <FloatingLabelInput
+          label        = "Enter Total Weight"
+          onChangeText = {onTotalWeightChange}
+          value        = {totalWeight}
         />
-        <BarWeightInput />
+        {/*- This is bar weight input! */} 
+        <FloatingLabelInput
+          label        = "Enter Bar Weight"
+          onChangeText = {onBarWeightChange}
+          value        = {barWeight}
+          style = {{marginTop: 10}}
+        />
       </View>
     );
   }
 }
+
 
 export default WeightInputGroup;
